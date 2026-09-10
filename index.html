@@ -1,28 +1,93 @@
 <!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Zhenyan Jia 的学术个人主页部署测试。">
-    <title>Zhenyan Jia · 主页测试</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
-  </head>
-  <body>
-    <main class="card">
-      <p class="eyebrow">ACADEMIC HOMEPAGE · DEPLOYMENT TEST</p>
-      <h1>Zhenyan Jia</h1>
-      <p class="intro">学术个人主页 · 测试页面</p>
-      <p>这里将用于展示个人简介、研究方向和论文。目前先验证 GitHub Pages 的部署是否正常。</p>
-      <ul class="checks">
-        <li><span>HTML</span><strong>页面已加载</strong></li>
-        <li><span>CSS</span><strong id="css-status">等待检测</strong></li>
-        <li><span>JavaScript</span><strong id="js-status">等待加载</strong></li>
-      </ul>
-      <button id="test-button" type="button" disabled>测试交互</button>
-      <p id="test-result" class="result" role="status" aria-live="polite">脚本加载后，可以点击按钮测试交互。</p>
-      <noscript><p>浏览器未启用 JavaScript，请启用后刷新以完成测试。</p></noscript>
-      <footer><a href="https://github.com/J3Z2Y9/zhenyanjia">查看 GitHub 仓库 ↗</a><span>GitHub Pages</span></footer>
-    </main>
-  </body>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="贾振言 Zhenyan Jia — 北京理工大学。研究、论文、项目与个人简历。">
+<meta name="theme-color" content="#f7f8fa">
+<meta property="og:title" content="贾振言 · Zhenyan Jia">
+<meta property="og:description" content="北京理工大学 · Beijing Institute of Technology">
+<meta property="og:type" content="website">
+<title>贾振言 · Zhenyan Jia | 北京理工大学</title>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./style.css">
+<script>
+try { const theme = localStorage.getItem('zj-theme'); document.documentElement.dataset.theme = theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'; } catch (_) {}
+</script>
+<script type="module" src="./script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">跳转至正文</a>
+<svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="external" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+<symbol id="download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></symbol>
+<symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+<symbol id="moon" viewBox="0 0 24 24"><path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/></symbol>
+<symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+</svg>
+<header class="site-header">
+<div class="header-inner container">
+<a class="brand" href="#home" aria-label="Zhenyan Jia — Home"><span class="brand-mark">Z<span>J</span><i></i></span><span class="brand-name">Zhenyan Jia<span class="brand-dot">.</span></span></a>
+<nav class="desktop-nav" aria-label="主导航" data-i18n-aria="navigation">
+<a href="#about" data-i18n="navAbout">关于</a><a href="#research" data-i18n="navResearch">研究</a><a href="#publications" data-i18n="navPublications">论文</a><a href="#projects" data-i18n="navProjects">项目</a><a href="#experience" data-i18n="navExperience">经历</a>
+</nav>
+<div class="header-controls">
+<button class="language-button" id="language-toggle" type="button" aria-label="Switch to English" hidden><span id="language-label">EN</span><span class="language-divider">/</span><span id="language-current">中</span></button>
+<button class="icon-button" id="theme-toggle" type="button" aria-label="切换至深色主题" hidden><svg class="icon theme-moon"><use href="#moon"/></svg><svg class="icon theme-sun"><use href="#sun"/></svg></button>
+<a class="header-cv" href="#cv">CV <svg class="icon"><use href="#external"/></svg></a>
+<button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="mobile-nav" hidden><svg class="icon"><use href="#menu"/></svg></button>
+</div></div>
+<nav class="mobile-nav container" id="mobile-nav" aria-label="移动导航" data-i18n-aria="mobileNavigation" hidden>
+<a href="#about" data-i18n="navAbout">关于</a><a href="#research" data-i18n="navResearch">研究</a><a href="#publications" data-i18n="navPublications">论文</a><a href="#projects" data-i18n="navProjects">项目</a><a href="#experience" data-i18n="navExperience">经历</a><a href="#contact" data-i18n="navContact">联系</a>
+</nav></header>
+<main id="main">
+<section class="hero container" id="home" aria-labelledby="hero-title">
+<div class="hero-content">
+<p class="eyebrow"><span class="signal-dot"></span><span data-i18n="academicHome">个人学术主页</span><span class="eyebrow-line"></span></p>
+<h1 id="hero-title"><span class="name-primary" id="name-primary">贾振言</span><span class="name-secondary" id="name-secondary">Zhenyan Jia<span class="name-period">.</span></span></h1>
+<p class="affiliation"><span class="affiliation-marker"></span><span data-profile="institution">北京理工大学</span></p>
+<p class="hero-description" data-i18n="heroDescription">关于研究、探索与构建的个人记录。</p>
+<div class="hero-actions"><a class="button button-primary" href="#research"><span data-i18n="exploreResearch">探索研究</span><svg class="icon"><use href="#arrow"/></svg></a><a class="text-link cv-link" href="./简历-北理工计算机学院-贾振言.pdf" target="_blank" rel="noopener"><span data-i18n="viewCV">查看简历</span><svg class="icon"><use href="#external"/></svg></a></div>
+<a class="hero-scroll" href="#about"><span class="scroll-track"><span></span></span><span data-i18n="scrollToExplore">向下探索</span></a>
+</div>
+<div class="hero-figure" aria-hidden="true">
+<div class="figure-top"><span>FIG. 01</span><span class="figure-tag">CONNECTED IDEAS</span><span class="figure-cross">+</span></div>
+<div class="network-stage"><div class="figure-orbit orbit-one"></div><div class="figure-orbit orbit-two"></div><canvas id="network-canvas"></canvas><span class="axis-label axis-y">y</span><span class="axis-label axis-x">x</span><span class="plot-label">IDEAS<br>IN MOTION</span></div>
+<div class="figure-bottom"><span><i class="figure-dot"></i> ACADEMIC NOTEBOOK</span><span>01 — ∞</span></div>
+</div>
+<div class="hero-baseline"><span>BEIJING INSTITUTE OF TECHNOLOGY</span><span>RESEARCH · EXPLORATION · PRACTICE</span></div>
+</section>
+<div class="container body-sections">
+<section class="section" id="about" aria-labelledby="about-title">
+<div class="section-label"><span class="section-number">01 /</span><h2 id="about-title" data-i18n="aboutTitle">关于我</h2><span class="section-english">ABOUT</span></div>
+<div class="section-content"><p class="about-lead" data-profile="intro">我是贾振言，来自北京理工大学。</p><p class="muted bio-text" data-profile="bio">个人简介待补充。</p><div class="about-meta"><div><span class="meta-label" data-i18n="affiliationLabel">所属机构</span><span data-profile="institution">北京理工大学</span></div><div><span class="meta-label" data-i18n="focusLabel">研究方向</span><span data-profile="focus">待补充</span></div></div></div>
+</section>
+<section class="section" id="research" aria-labelledby="research-title">
+<div class="section-label"><span class="section-number">02 /</span><h2 id="research-title" data-i18n="researchTitle">研究方向</h2><span class="section-english">RESEARCH</span></div>
+<div class="section-content"><div class="section-intro"><p data-i18n="researchIntro">关注的问题与探索的方向。</p><span class="mini-label">FIELDS OF INTEREST</span></div><div class="research-grid" id="research-list"><p data-i18n="researchEmpty">研究方向待补充。</p></div></div>
+</section>
+<section class="section" id="publications" aria-labelledby="publications-title">
+<div class="section-label"><span class="section-number">03 /</span><h2 id="publications-title" data-i18n="publicationsTitle">学术论文</h2><span class="section-english">PUBLICATIONS</span></div>
+<div class="section-content"><div class="section-intro"><p data-i18n="publicationsIntro">论文与学术成果。</p><span class="mini-label">SELECTED WRITING</span></div><div id="publication-list" class="publication-list"><p data-i18n="publicationsEmpty">论文信息待补充。</p></div></div>
+</section>
+<section class="section" id="projects" aria-labelledby="projects-title">
+<div class="section-label"><span class="section-number">04 /</span><h2 id="projects-title" data-i18n="projectsTitle">研究与项目</h2><span class="section-english">PROJECTS</span></div>
+<div class="section-content"><div class="section-intro"><p data-i18n="projectsIntro">从想法到实现。</p><span class="mini-label">IDEAS INTO PRACTICE</span></div><div id="project-list" class="project-grid"><p data-i18n="projectsEmpty">项目信息待补充。</p></div></div>
+</section>
+<section class="section" id="experience" aria-labelledby="experience-title">
+<div class="section-label"><span class="section-number">05 /</span><h2 id="experience-title" data-i18n="experienceTitle">教育与经历</h2><span class="section-english">EXPERIENCE</span></div>
+<div class="section-content"><div id="experience-list" class="timeline"><article class="timeline-item"><span class="timeline-date" data-i18n="datesPending">时间待补充</span><div><h3 data-profile="institution">北京理工大学</h3><p class="muted" data-i18n="educationPending">学位、专业与经历待补充。</p></div></article></div></div>
+</section>
+<section class="section cv-section" id="cv" aria-labelledby="cv-title">
+<div class="section-label"><span class="section-number">06 /</span><h2 id="cv-title" data-i18n="cvTitle">个人简历</h2><span class="section-english">CURRICULUM VITAE</span></div>
+<div class="section-content"><div class="cv-card"><div class="cv-cover" aria-hidden="true"><span class="cv-cover-name">ZHENYAN<br>JIA<span>.</span></span><div class="cv-cover-rule"></div><span class="cv-cover-caption">CURRICULUM<br>VITAE</span><span class="cv-cover-index">CV / PDF</span></div><div class="cv-detail"><span class="mini-label" data-i18n="cvDocument">简历文档</span><h3 data-i18n="cvHeading">更完整地了解我。</h3><p data-i18n="cvDescription">教育背景、研究经历与个人履历。</p><div class="cv-actions"><a class="button button-primary cv-link" href="./简历-北理工计算机学院-贾振言.pdf" target="_blank" rel="noopener" id="cv-preview"><span data-i18n="previewCV">在线预览</span><svg class="icon"><use href="#external"/></svg></a><a class="text-link cv-link" href="./简历-北理工计算机学院-贾振言.pdf" download="Zhenyan-Jia-CV.pdf"><span data-i18n="downloadCV">下载 PDF</span><svg class="icon"><use href="#download"/></svg></a></div><p class="cv-file-note">PDF <span>·</span> <span data-i18n="originalDocument">原始简历文档</span></p></div></div></div>
+</section></div>
+<section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container contact-inner"><div><p class="eyebrow" data-i18n="contactEyebrow">保持联系</p><h2 id="contact-title" data-i18n="contactTitle">让交流，开启下一步。</h2><p class="contact-description" data-i18n="contactDescription">学术交流 · 研究讨论 · 项目合作</p></div><div class="contact-links" id="contact-links"><a class="contact-link" href="https://github.com/J3Z2Y9" target="_blank" rel="noopener"><span>GitHub <small>@J3Z2Y9</small></span><svg class="icon"><use href="#external"/></svg></a><p class="contact-pending" data-i18n="emailPending">邮箱待补充</p></div></div></section>
+</main>
+<footer class="site-footer container"><a class="footer-name" href="#home">Zhenyan Jia<span>.</span></a><p>© <span id="current-year">2026</span> <span data-profile="name">贾振言</span><span class="footer-separator">/</span><span data-i18n="footerLabel">个人学术主页</span></p><a class="back-top" href="#home"><span data-i18n="backToTop">返回顶部</span><svg class="icon"><use href="#arrow"/></svg></a></footer>
+<dialog class="cv-dialog" id="cv-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><h2 id="dialog-title" data-i18n="dialogTitle">贾振言 · 个人简历</h2><div><a class="text-link cv-link" href="./简历-北理工计算机学院-贾振言.pdf" target="_blank" rel="noopener"><span data-i18n="openNewTab">新窗口打开</span><svg class="icon"><use href="#external"/></svg></a><button class="icon-button" id="close-dialog" type="button" aria-label="关闭简历" data-i18n-aria="closeCV"><svg class="icon"><use href="#close"/></svg></button></div></div><div id="pdf-container" class="pdf-container"></div><p class="dialog-note" data-i18n="pdfNote">若浏览器不支持 PDF 预览，请使用“新窗口打开”或下载查看。</p></dialog>
+<noscript><div class="noscript-note">启用 JavaScript 可切换语言并查看完整资料。基础内容与 PDF 链接仍可使用。 / Enable JavaScript for language switching and the complete profile.</div></noscript>
+</body>
 </html>
