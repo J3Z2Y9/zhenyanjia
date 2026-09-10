@@ -2,7 +2,7 @@
 
 北京理工大学个人学术主页。原生 HTML、CSS 和 ES Modules，无需构建或安装依赖，无外部字体或脚本请求，直接部署到 GitHub Pages。
 
-网址：https://j3z2y9.github.io/zhenyanjia/
+网址：https://j3z2y9.github.io/
 
 ## 功能
 
